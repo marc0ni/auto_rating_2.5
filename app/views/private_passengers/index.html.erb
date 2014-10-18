@@ -1,7 +1,20 @@
-<h1>Listing private_passengers</h1>
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
+<h1>Listing Private Passengers</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
       <th>Territory</th>
       <th>Age group</th>
@@ -20,7 +33,7 @@
       <tr>
         <td><%= private_passenger.territory %></td>
         <td><%= private_passenger.age_group %></td>
-        <td><%= private_passenger.cost_new %></td>
+        <td><%= number_to_currency(private_passenger.cost_new) %></td>
         <td><%= private_passenger.make %></td>
         <td><%= private_passenger.model %></td>
         <td><%= private_passenger.year %></td>

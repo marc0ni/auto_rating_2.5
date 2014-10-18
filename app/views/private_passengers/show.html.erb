@@ -1,34 +1,74 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Territory:</strong>
-  <%= @private_passenger.territory %>
-</p>
-
-<p>
-  <strong>Age group:</strong>
-  <%= @private_passenger.age_group %>
-</p>
-
-<p>
-  <strong>Cost new:</strong>
-  <%= @private_passenger.cost_new %>
-</p>
-
-<p>
-  <strong>Make:</strong>
-  <%= @private_passenger.make %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @private_passenger.model %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @private_passenger.year %>
-</p>
+<div class="form-horizontal form-view">
+	<h3> View Private Passenger Info  </h3>
+	<h3 class="form-section"></h3>
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Territory:</label>
+				<div class="controls">
+					<span class="text"><%= @private_passenger.territory %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Age Group:</label>
+				<div class="controls">
+					<span class="text"><%= @private_passenger.age_group %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Cost New:</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@private_passenger.cost_new) %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Make:</label>
+				<div class="controls">
+					<span class="text"><%= @private_passenger.make %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Model:</label>
+				<div class="controls">
+					<span class="text"><%= @private_passenger.model %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Year:</label>
+				<div class="controls">
+					<span class="text"><%= @private_passenger.year %></span>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <%= link_to 'Edit', edit_private_passenger_path(@private_passenger) %> |
 <%= link_to 'Back', private_passengers_path %>
