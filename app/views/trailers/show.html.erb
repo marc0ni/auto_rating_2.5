@@ -1,39 +1,76 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @trailer.type %>
-</p>
+<div class="container-fluid">
+  <div class="form-horizontal form-view">
+  	<h3 class="form-section">Trailer</h3>
+  	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Type:</label>
+				<div class="controls">
+					<span class="text"><%= @trailer.type %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Territory Code:</label>
+				<div class="controls">
+					<span class="text"><%= @trailer.territory %></span>
+				</div>
+			</div>
+		</div>
+	
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Model Year:</label>
+				<div class="controls">
+					<span class="text"><%= @trailer.model_year %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Cost New:</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@trailer.cost_new) %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Age Group:</label>
+				<div class="controls">
+					<span class="text"><%= @trailer.age_group %></span>
+				</div>
+			</div>
+		</div>
+		<!--span-->
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label">Load Capacity:</label>
+				<div class="controls">
+					<span class="text"><%= @trailer.load_capacity %></span>
+				</div>
+			</div>
+		</div>	
+	</div>	
+  </div>
 
-<p>
-  <strong>Territory:</strong>
-  <%= @trailer.territory %>
-</p>
-
-<p>
-  <strong>Radius class:</strong>
-  <%= @trailer.radius_class %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @trailer.year %>
-</p>
-
-<p>
-  <strong>Cost new:</strong>
-  <%= @trailer.cost_new %>
-</p>
-
-<p>
-  <strong>Age group:</strong>
-  <%= @trailer.age_group %>
-</p>
-
-<p>
-  <strong>Load capacity:</strong>
-  <%= @trailer.load_capacity %>
-</p>
 
 <%= link_to 'Edit', edit_trailer_path(@trailer) %> |
 <%= link_to 'Back', trailers_path %>

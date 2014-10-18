@@ -1,12 +1,25 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
 <h1>Listing trailers</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
       <th>Type</th>
       <th>Territory</th>
       <th>Radius class</th>
-      <th>Year</th>
+      <th>Model year</th>
       <th>Cost new</th>
       <th>Age group</th>
       <th>Load capacity</th>
@@ -22,8 +35,8 @@
         <td><%= trailer.type %></td>
         <td><%= trailer.territory %></td>
         <td><%= trailer.radius_class %></td>
-        <td><%= trailer.year %></td>
-        <td><%= trailer.cost_new %></td>
+        <td><%= trailer.model_year %></td>
+        <td><%= number_to_currency(trailer.cost_new) %></td>
         <td><%= trailer.age_group %></td>
         <td><%= trailer.load_capacity %></td>
         <td><%= link_to 'Show', trailer %></td>
