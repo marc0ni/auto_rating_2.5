@@ -1,19 +1,31 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
 <h1>Listing trucks</h1>
 
-<table>
-  <thead>
-    <tr>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
       <th>Type</th>
       <th>Territory</th>
       <th>Business use</th>
       <th>Fleet nonfleet</th>
       <th>Make</th>
-      <th>Year</th>
+      <th>Model year</th>
       <th>Cost new</th>
       <th>Age group</th>
       <th>Size class</th>
-      <th>Gvw</th>
-      <th>Gcw</th>
+      <th>GVW</th>
+      <th>GCW</th>
       <th></th>
       <th></th>
       <th></th>
@@ -28,8 +40,8 @@
         <td><%= truck.business_use %></td>
         <td><%= truck.fleet_nonfleet %></td>
         <td><%= truck.make %></td>
-        <td><%= truck.year %></td>
-        <td><%= truck.cost_new %></td>
+        <td><%= truck.model_year %></td>
+        <td><%= number_to_currency(truck.cost_new) %></td>
         <td><%= truck.age_group %></td>
         <td><%= truck.size_class %></td>
         <td><%= truck.gvw %></td>
