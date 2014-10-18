@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018010452) do
+ActiveRecord::Schema.define(version: 20141018225903) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(version: 20141018010452) do
   add_index "agents", ["proposal_id"], name: "index_agents_on_proposal_id"
   add_index "agents", ["submission_id"], name: "index_agents_on_submission_id"
 
-  create_table "bipds", force: true do |t|
-    t.string   "medical"
-    t.integer  "submission_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "bipds", ["submission_id"], name: "index_bipds_on_submission_id"
-
   create_table "deductibles", force: true do |t|
     t.decimal  "spec_causes"
     t.string   "comp"
@@ -91,6 +82,16 @@ ActiveRecord::Schema.define(version: 20141018010452) do
   end
 
   add_index "details", ["risk_id"], name: "index_details_on_risk_id"
+
+  create_table "limits", force: true do |t|
+    t.string   "bipd"
+    t.string   "medical"
+    t.integer  "submission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "limits", ["submission_id"], name: "index_limits_on_submission_id"
 
   create_table "policies", force: true do |t|
     t.string   "policy_no"
