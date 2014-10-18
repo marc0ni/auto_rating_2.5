@@ -11,31 +11,51 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :risk %><br>
-    <%= f.text_field :risk %>
+  <div class="container-fluid">
+	  <!-- BEGIN FORM-->
+	  <form action="#" class="form-horizontal">
+		  <h3 class="form-section">Risk Info</h3>
+		  <div class="row-fluid">
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Risk:</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :risk %> 
+					  </div>
+				  </div>
+			  </div> 
+			  <!--/span-->
+			  <div class="span3 ">
+				  <label class="control-label">Premium:</label>
+				  <div class="controls">
+					  <input type="text" class="m-wrap span12"<%= f.text_field :premium %>
+				  </div>
+			  </div>
+			  <!--/span-->
+			  <div class="span3 ">
+				  <label class="control-label">Limits:</label>
+				  <div class="controls">
+					  <input type="text" class="m-wrap span12"<%= f.text_field :limit %>
+				  </div>
+			  </div>
+			  <!--/span-->
+			  <div class="span3 ">
+				  <label class="control-label">Deductible:</label>
+				  <div class="controls">
+					  <input type="text" class="m-wrap span12"<%= f.text_field :deductible %>
+				  </div>
+			  </div>
+		  </div>
+		  
+		  <!--/row-->
+		  <div class="form-actions">
+			  <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>
+			  <button type="button" class="btn">Cancel</button>
+		  </div>
+	  </form>
+	  <!-- END FORM--> 
   </div>
-  <div class="field">
-    <%= f.label :premium %><br>
-    <%= f.number_field :premium %>
-  </div>
-  <div class="field">
-    <%= f.label :deductible %><br>
-    <%= f.number_field :deductible %>
-  </div>
-  <div class="field">
-    <%= f.label :limit %><br>
-    <%= f.number_field :limit %>
-  </div>
-  <div class="field">
-    <%= f.label :submission_id %><br>
-    <%= f.text_field :submission_id %>
-  </div>
-  <div class="field">
-    <%= f.label :details_id %><br>
-    <%= f.text_field :details_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>       
+
 <% end %>
+  
