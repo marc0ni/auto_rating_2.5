@@ -1,6 +1,7 @@
-class CreateBipds < ActiveRecord::Migration
+class CreateLimits < ActiveRecord::Migration
   def change
-    create_table :bipds do |t|
+    create_table :limits do |t|
+      t.string :bipd
       t.string :medical
       t.belongs_to :submission, index: true
 
