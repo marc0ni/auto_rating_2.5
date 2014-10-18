@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Policy no:</strong>
+  <%= @policy.policy_no %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @policy.submission %>
+</p>
+
+<p>
+  <strong>Proposal:</strong>
+  <%= @policy.proposal %>
+</p>
+
+<%= link_to 'Edit', edit_policy_path(@policy) %> |
+<%= link_to 'Back', policies_path %>

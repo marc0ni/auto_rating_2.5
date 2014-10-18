@@ -1,0 +1,2 @@
+module BipdsHelper
+end

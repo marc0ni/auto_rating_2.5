@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  policy_no: MyString
+  submission_id: 
+  proposal_id: 
+
+two:
+  policy_no: MyString
+  submission_id: 
+  proposal_id: 

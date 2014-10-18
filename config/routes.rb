@@ -1,4 +1,28 @@
 AutoRating25::Application.routes.draw do
+  resources :trucks
+
+  resources :trailers
+
+  resources :private_passengers
+
+  resources :submissions
+
+  resources :risks
+
+  resources :proposals
+
+  resources :premia
+
+  resources :policies
+
+  resources :bipds
+
+  resources :details
+
+  resources :deductibles
+
+  resources :agents
+
   resources :accounts
 
   get "provider/index"

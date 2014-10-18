@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medical:</strong>
+  <%= @bipd.medical %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @bipd.submission %>
+</p>
+
+<%= link_to 'Edit', edit_bipd_path(@bipd) %> |
+<%= link_to 'Back', bipds_path %>
