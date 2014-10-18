@@ -1,0 +1,45 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
+<h1>Listing Limits</h1>
+
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
+    <tr>
+    <tr>
+	  <th>Risk</th>
+	  <th>BIPD</th>
+      <th>Medical</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @limits.each do |limit| %>
+      <tr>
+		<td><%= limit.risk.risk %></td>
+		<td><%= number_to_currency(limit.bipd)%></td>
+        <td><%= number_to_currency(limit.medical) %></td>  
+        <td><%= link_to 'Show', limit %></td>
+        <td><%= link_to 'Edit', edit_limit_path(limit) %></td>
+        <td><%= link_to 'Destroy', limit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Limit', new_limit_path %>

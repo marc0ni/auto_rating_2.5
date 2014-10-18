@@ -1,4 +1,6 @@
 AutoRating25::Application.routes.draw do
+  resources :limits
+
   resources :trucks
 
   resources :trailers

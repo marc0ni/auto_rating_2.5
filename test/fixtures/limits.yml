@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bipd: MyString
+  medical: MyString
+  submission_id: 
+
+two:
+  bipd: MyString
+  medical: MyString
+  submission_id: 

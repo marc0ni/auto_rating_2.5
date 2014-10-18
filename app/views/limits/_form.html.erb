@@ -1,0 +1,61 @@
+<%= form_for(@limit) do |f| %>
+  <% if @limit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@limit.errors.count, "error") %> prohibited this limit from being saved:</h2>
+
+      <ul>
+      <% @limit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="container-fluid">
+  	  <!-- BEGIN FORM-->
+  	  <form action="#" class="form-horizontal">
+  		  <h3 class="form-section">Limits Info</h3>
+  		  <div class="row-fluid">
+ 			 <div class="span4 ">
+ 				 <div class="control-group" id="risk-option">
+ 					 <label class="control-label">Risk</label>
+ 					 <div class="controls">
+ 						 <select class="m-wrap span12"<%= f.collection_select(:risk_id, Risk.all, :id, :risk, options = {:prompt => 'Select One'} ) %> </select>
+ 					 </div>
+ 				 </div>
+ 			 </div>
+			  
+  			  <div class="span4 ">
+  				  <div class="control-group">
+  					  <label class="control-label" >BIPD</label>
+  					  <div class="controls">
+  						  <select class="m-wrap span12"
+  						  <%= f.select :bipd, [ '100', '250', '300', '350', '500', '1000'], :prompt => 'Select One' %>
+  						  </select>
+  					  </div>
+  				  </div>
+  			  </div>
+  			  <!--/span--> 
+  			  <div class="span4 ">
+  				  <div class="control-group">
+  					  <label class="control-label" >Medical</label>
+  					  <div class="controls">
+  						  <select class="m-wrap span12"
+  						  <%= f.select :medical, [ '500', '2000', '3000'], :prompt => 'Select One' %>
+  						  </select>
+  					  </div>
+  				  </div>
+  			  </div>
+		  </div>
+
+  		  <!--/row-->
+  		  <div class="form-actions">
+  			  <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>
+  			  <button type="button" class="btn">Cancel</button>
+  		  </div>
+  	  </form>
+  	  <!-- END FORM--> 
+    </div>
+  </div>
+<% end %>
+
