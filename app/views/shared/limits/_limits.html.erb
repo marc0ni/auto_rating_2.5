@@ -1,0 +1,48 @@
+<%= form_for :limits, remote: true  do |f|%>
+    <% if @limit.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@limit.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+        <ul>
+        <% @limit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+
+
+
+<div class="container-fluid">
+	<!-- BEGIN FORM-->
+	<form action="#" class="form-horizontal">
+		<div class="row-fluid">
+			<!--/span-->
+			<div class="span6 ">
+				<div class="control-group">
+					<label class="control-label" >Bodily Injury/Property Damage</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<%= f.select :bipd, [ '100', '250', '300', '350','500','1000',], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span6 ">
+				<div class="control-group">
+					<label class="control-label" >Medical Payments</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<%= f.select :medical, [ '500', '1000', '2000', '5000'], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="form-actions">
+				<button type="submit" class="btn blue", limits_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
+				<button type="button" class="btn">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div>
+  
+<% end %>

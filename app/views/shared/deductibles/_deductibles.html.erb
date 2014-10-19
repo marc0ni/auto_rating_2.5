@@ -1,0 +1,26 @@
+<%= form_for :deductibles  do |f|%>
+    <% if @deductible.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@deductible.errors.count, "error") %> prohibited this deductible from being saved:</h2>
+
+        <ul>
+        <% @deductible.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+	
+<form action="#" class="form-horizontal">
+	<% if @submission.risk == "Private Passenger"%>
+		<%= render :partial => "shared/deductibles/pp_ded" %>
+		
+	<% else %>
+		<%= render :partial => "shared/deductibles/ttt_ded"  %>
+		
+	<% end %>
+	<!--/row-->
+	<div class="form-actions">
+		<button type="submit" class="btn blue", deductibles_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
+		<button type="button" class="btn">Cancel</button>
+	</div>	
+</form>
+  
+<% end %>

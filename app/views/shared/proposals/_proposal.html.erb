@@ -1,0 +1,28 @@
+<%= form_for :proposals, remote: true do |f|%>
+
+<form action="#" class="form-horizontal">
+	
+	<% if @submission.risk == "Private Passenger"%>
+		<%= render partial: "shared/proposals/pp_prop" %>
+		
+	<% elsif @submission.risk == "Truck"%>
+		<%= render partial: "shared/proposals/truck_prop" %>
+			
+	<% elsif @submission.risk == "Truck Tractor" %>
+		<%= render partial: "shared/proposals/truck_prop" %>
+			
+	<% elsif @submission.risk == "Trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop" %>
+			
+	<% elsif @submission.risk == "Semi-trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop" %>
+				
+	<% else @submission.risk == "Utility/Service trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop" %>
+			
+	<% end %>
+	
+</form>
+
+  
+<% end %>
